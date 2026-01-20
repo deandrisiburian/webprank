@@ -1,0 +1,15 @@
+import base64
+import zlib
+
+ENC_DATA = """eJzNVsFu20YQvfMrpjRQS63FSlaSOg4SgLbpmKVECiTVwLANYiUtrYXEpbAk47iCgCDnHnrwod+XL+ksKVGU5NgtemgXgknvzrx5M7MzQxbNYpFCnCiseEvuy9eURbTcZrecTBVlDxqNBliOfW6+77u6Z8IH3bV1uatcmL/ofXgL6nWz3b5qH715+ebFq0gFpdf3zYvyoIlby6WcOJ0zKE9alZOu4eprnfb6SNFP+rDWeY1wK1o91/ENCznptm82Ti57uuflzEY0hME0Hk6Cwo+afGTRAYSCRLR+rEjgmWA8rYXqNZ/nxhdX390AAiKWJR09M3uG2+lbuq3Nc48Wal1RUnFfqBfIWsUA/ueZ703bP9gwXn9S3Pf83rY8/TSks3TJkiTJyl+97ztg2p6vdzqlnyRL44DxJCXTaW3p2jiOKEYsTjTKPzIR86v9C6dr7N8sIdNxkAwFm6WFkNzQyCCRz1oQhGxKg6CgPYxGKBOqs/t0HHOYV3QXaiER3uYSc2l08ZP2WzIWQxVYWCLTTyxJk9q2SB3oNKEVzQHJ93PUMsxy3bF0DPGM8hoaO4B9sV8HkkC4lsiJxDylXLoUaoKSUa1eHiMZ6QiPU2B8JbipvW2DPGpDrlC7Eyylxc1B2MU1VwtT1bxt566rmzZ4p65h2GXqIsL4KmVS9i4Wo2BAORHyurfaredhs9UqApL/uRtjasAXGV0bwShjDac0qu0Pp5RgbMqj8mUPLjAgVIDJwxi+BwsjQCZrnstKmGOpLXK6/2DBnlr/FtKybuay7BeyOj847hmcXug+2E7XcbGZHMM87yOL5tFhu3V42G6/ar/O1Qvm3wb/FzR3IQsOBdEdkyp8ffj968Pn/83vj0cpfimvqG+4XdPWO+AZp33X9C/zVumcOp3KPUaFZ2Cw0fh97xgM+9S97PnGGeJ5nunY8DdgHv7rIFV/fz52jcqm/ty1uPrxZikMXcozfnubQSxbCJuQhMEk40MGZJLQRNO0xyztwHg0ygiqpOwjS7HNpFREDHs/JHRE+C2M2IxgiWa7aGpDhR/gxdEjrDd6ZtU+9qn8Ynd1r2/hPINVKe6GQK4soQInyiyTvTR/IoblnBmgW3gB4N07kJOwqoINtqr1dqud7TbRCrVlcMCxoIzPr1SwsIjugIoxPqcaxj4aZBMClE9w/iRsM9hlFPArRkumlM5qTe3n3fMn+uVqDXB8TGBjW46qJ71YfkLAuW52sFBKT6x4RCEhUzIGgglFeiPExnyPSJgS8YwHLe3l7nm5UcwbqFn0fhATMTJxrgmRzdIDMJxzQ4hY1HdnJOMZVRTMWBBw/BoKApkvNQjkNAoCtVDY/KrIt4pppfwFWKgskA=="""
+
+# Decrypt the data without executing it
+try:
+    decoded_data = base64.b64decode(ENC_DATA)
+    decompressed_data = zlib.decompress(decoded_data)
+    print("Decrypted code:")
+    print("=" * 80)
+    print(decompressed_data.decode('utf-8'))
+    print("=" * 80)
+except Exception as e:
+    print(f"Error during decryption: {e}")
